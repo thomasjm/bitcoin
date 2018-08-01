@@ -11,3 +11,6 @@ Release
 Debug
 Benchmark
 vs2010.*
+ReleaseDLL
+x64
+.vs

@@ -32,7 +32,7 @@
 #define STORAGE_LEVELDB_PORT_PORT_WIN_H_
 
 #ifdef _MSC_VER
-#define snprintf _snprintf
+//#define snprintf _snprintf
 #define close _close
 #define fread_unlocked _fread_nolock
 #endif
@@ -41,6 +41,11 @@
 #include <stdint.h>
 #ifdef SNAPPY
 #include <snappy.h>
+#endif
+
+#if defined(_MSC_VER)
+#include <BaseTsd.h>
+typedef SSIZE_T ssize_t;
 #endif
 
 namespace leveldb {
